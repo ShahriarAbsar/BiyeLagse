@@ -1,0 +1,138 @@
+/* Caurocel */
+
+.gallery {
+  background-color: #bb3838f1;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.mat-form-field {
+  text-align: center;
+}
+
+.img-container {
+  top: 4vh;
+  position: fixed;
+  left: 30vw;
+  align-items: center;
+  width: 350px;
+  height: 600px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.img-prev {
+  margin-top: 10px;
+}
+
+.img-slide {
+  display: inline-block;
+  height: 50px;
+  width: 24%;
+  margin: 0 1px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.active {
+  border: 2px solid #222;
+  opacity: 1;
+}
+
+.design {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.text-fields {
+  border-color: black;
+  position: fixed;
+  top: 10vh;
+  right: 60vh;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-fields input[type="text"] {
+  background-color: rgba(250, 246, 246, 0.845);
+  border: none;
+  border-bottom: 1px solid rgb(27, 26, 26);
+  color: rgb(42, 43, 42);
+  padding: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.text-fields input {
+  margin-bottom: 10px;
+}
+
+.text-overlay {
+  font-size: larger;
+  position: fixed;
+  top: 15vh;
+  left: -35vw;
+  color: #121212;
+  padding: 20px;
+  z-index: 1;
+  text-align: center;
+}
+
+.button {
+  position: fixed;
+  top: 85vh;
+  left: 61.5vw;
+}
+
+.button1{
+  position: fixed;
+  top: 85vh;
+  left: 67.5vw;
+}
+
+/* Adjust the size and position of the datepicker container */
+.date {
+  position: fixed;
+  top: 5vh;
+}
+
+/* Adjust the width of the form field */
+.date .example-full-width {
+  width: 300px;
+  height: 70px;
+}
+
+/* Adjust the font size of the datepicker */
+.date .example-full-width ::ng-deep .mat-datepicker-content {
+  font-size: 12px;
+}
+
+/* Make the datepicker transparent */
+.date .example-full-width ::ng-deep .mat-calendar {
+  background-color: transparent !important;
+}
+
+.date .example-full-width ::ng-deep .mat-calendar-content {
+  background-color: transparent !important;
+}
+
+.date .example-full-width ::ng-deep .mat-calendar-body-cell-content {
+  color: white !important;
+}
+
+.date
+  .example-full-width
+  ::ng-deep
+  .mat-calendar-body-selected
+  .mat-calendar-body-cell-content {
+  color: white !important;
+}

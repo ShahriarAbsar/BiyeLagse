@@ -1,0 +1,132 @@
+<!--Carousel-->
+<div class="container">
+  <section class="gallery">
+    <div class="container">
+      <div class="img-container">
+        <img src="assets/img3.jpg" alt="image" id="preview" />
+        <div class="img-prev text-center">
+          <div class="img-slide active">
+            <img
+              src="assets/img01.png"
+              alt="image1"
+              (click)="imageChange($event)"
+            />
+          </div>
+          <div class="img-slide">
+            <img
+              src="assets/img002.png"
+              alt="image2"
+              (click)="imageChange($event)"
+            />
+          </div>
+          <div class="img-slide">
+            <img
+              src="assets/img003.png"
+              alt="image3"
+              (click)="imageChange($event)"
+            />
+          </div>
+          <div class="img-slide">
+            <img
+              src="assets/img004.png"
+              alt="image4"
+              (click)="imageChange($event)"
+            />
+          </div>
+          <div class="img-slide">
+            <img
+              src="assets/test.jpg"
+              alt="image5"
+              (click)="imageChange($event)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="design">
+    <div class="overlay-container">
+      <div class="text-fields">
+        <div class="date">
+          <input
+            type="text"
+            style="height: 50px"
+            placeholder="Bride's Name"
+            [(ngModel)]="brideName"
+            (input)="updateImageOverlay()"
+          />
+          <input
+            type="text"
+            style="height: 50px"
+            placeholder="Groom's Name"
+            [(ngModel)]="groomName"
+            (input)="updateImageOverlay()"
+          />
+          <input
+            type="text"
+            style="width: 300px; height: 30px"
+            placeholder="Name"
+            [(ngModel)]="mapName"
+            (input)="updateImageOverlay()"
+          />
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Choose a date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              (dateChange)="onDateChange($event)"
+              [(ngModel)]="selectedDate"
+              (input)="updateImageOverlay()"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <input
+            type="time"
+            [(ngModel)]="selectedTime"
+            (input)="updateImageOverlay()"
+          />
+
+          <input
+            type="text"
+            style="height: 20px"
+            placeholder="Daughter Of"
+            [(ngModel)]="daughterOf"
+            (input)="updateImageOverlay()"
+          />
+          <input
+            type="text"
+            style="height: 20px"
+            placeholder="Son of"
+            [(ngModel)]="sonOf"
+            (input)="updateImageOverlay()"
+          />
+          <input
+            type="text"
+            style="height: 20px"
+            placeholder="Contact number"
+            [(ngModel)]="contactNumber"
+            (input)="updateImageOverlay()"
+          />
+        </div>
+
+        <div class="text-overlay">
+          <h2>{{ brideName }} {{ groomName }}</h2>
+          <p>{{ selectedDate }}</p>
+          <p>{{ selectedTime }}</p>
+          <p>{{ daughterOf }}</p>
+          <p>{{ sonOf }}</p>
+          <p>{{ contactNumber }}</p>
+          <p>{{ mapName }}</p>
+        </div>
+      </div>
+    </div>
+    <button class="button1" (click)="clickFun()">Share</button>
+    <button class="button" (click)="downloadImage()">Download</button>
+  </div>
+</div>
