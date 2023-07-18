@@ -70,6 +70,7 @@ export class DesignsComponent {
     textOverlay.children[5].textContent = this.sonOf;
     textOverlay.children[6].textContent = this.contactNumber;
     textOverlay.children[7].textContent = this.mapName;
+  
   }
   
 
