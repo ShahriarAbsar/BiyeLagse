@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input'
 import {  MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatInputModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

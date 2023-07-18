@@ -1,4 +1,7 @@
 <!--Carousel-->
+
+
+          
 <div class="container">
   <section class="gallery">
     <div class="container">
@@ -64,12 +67,14 @@
             (input)="updateImageOverlay()"
           />
           <input
-            type="text"
-            style="width: 300px; height: 30px"
-            placeholder="Name"
-            [(ngModel)]="mapName"
-            (input)="updateImageOverlay()"
-          />
+  type="text"
+  id="locationInput"
+  style="width: 300px; height: 30px"
+  placeholder="Location"
+  [(ngModel)]="mapName"
+  (input)="updateImageOverlay()"
+/>
+
 
           <mat-form-field class="example-full-width">
             <mat-label>Choose a date</mat-label>
@@ -86,11 +91,10 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <input
-            type="time"
-            [(ngModel)]="selectedTime"
-            (input)="updateImageOverlay()"
-          />
+
+          
+          <input placeholder="Time" [ngxTimepicker]="picke"  [(ngModel)]="selectedTime"  />
+          <ngx-material-timepicker #picke></ngx-material-timepicker>
 
           <input
             type="text"
@@ -115,8 +119,27 @@
           />
         </div>
 
+        <div class="font-dropdown">
+          <label for="fontSelect">Select Font:</label>
+          <select
+            id="fontSelect"
+            [(ngModel)]="selectedFont"
+            (change)="updateFont()"
+          >
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+
+            <option value="Fantasy">Fantasy</option>
+            <option value="Freehand">Freehand</option>
+
+            <!-- Add more font options as needed  e-->
+          </select>
+        </div>
+
         <div class="text-overlay">
-          <h2>{{ brideName }} {{ groomName }}</h2>
+          <p style="font-size: 50px">{{ brideName }}</p>
+
+          <p style="font-size: 50px">{{ groomName }}</p>
           <p>{{ selectedDate }}</p>
           <p>{{ selectedTime }}</p>
           <p>{{ daughterOf }}</p>
@@ -128,5 +151,8 @@
     </div>
     <button class="button1" (click)="clickFun()">Share</button>
     <button class="button" (click)="downloadImage()">Download</button>
+    <button class="button" (click)="showLocation()">Show Location</button>
   </div>
 </div>
+
+<!--this is the original code-->

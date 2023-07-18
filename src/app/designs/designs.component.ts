@@ -1,5 +1,17 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { HttpClient } from '@angular/common/http';
+
+interface GeocodingResponse {
+  results: {
+    geometry: {
+      location: {
+        lat: number;
+        lng: number;
+      };
+    };
+  }[];
+}
 
 @Component({
   selector: 'app-designs',
@@ -15,10 +27,11 @@ export class DesignsComponent {
   daughterOf = '';
   sonOf = '';
   contactNumber = '';
+  selectedFont = 'Arial'; // Default font selection
 
   @ViewChild('imageRef', { static: true }) imageRef!: ElementRef<HTMLImageElement>;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private http: HttpClient) {}
 
   imageChange(event: any) {
     const src = event.target.getAttribute('src');
@@ -47,14 +60,18 @@ export class DesignsComponent {
 
   updateImageOverlay() {
     const textOverlay: any = document.querySelector('.text-overlay');
-    textOverlay.children[0].textContent = `${this.brideName} & ${this.groomName}`;
-    textOverlay.children[1].textContent = this.selectedDate;
-    textOverlay.children[2].textContent = this.selectedTime;
-    textOverlay.children[3].textContent = this.daughterOf;
-    textOverlay.children[4].textContent = this.sonOf;
-    textOverlay.children[5].textContent = this.contactNumber;
-    textOverlay.children[6].textContent = this.mapName;
+    const font = this.selectedFont;
+    textOverlay.style.fontFamily = font;
+    textOverlay.children[0].textContent = this.brideName;
+    textOverlay.children[1].textContent = this.groomName;
+    textOverlay.children[2].textContent = this.selectedDate;
+    textOverlay.children[3].textContent = this.selectedTime;
+    textOverlay.children[4].textContent = this.daughterOf;
+    textOverlay.children[5].textContent = this.sonOf;
+    textOverlay.children[6].textContent = this.contactNumber;
+    textOverlay.children[7].textContent = this.mapName;
   }
+  
 
   onDateChange(event: MatDatepickerInputEvent<Date>) {
     const selectedDate = event.value;
@@ -96,4 +113,36 @@ export class DesignsComponent {
     downloadLink.download = 'design.png';
     downloadLink.click();
   }
+
+  updateFont() {
+    this.updateImageOverlay();
+    this.downloadImage();
+  }
+
+  showLocation() {
+    const location = this.mapName; // Get the location from the input field
+    const encodedLocation = encodeURIComponent(location); // Encode the location for the URL
+    const apiKey = 'AIzaSyAWk5MVEbBEPoS_1l2bC5tFmrOky0oWQc4'; // Replace with your Maps API key
+  
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const startingPoint = `${latitude},${longitude}`;
+  
+        // Create the directions URL with the starting point and destination
+        const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${startingPoint}&destination=${encodedLocation}&key=${apiKey}`;
+  
+        // Open Google Maps with the directions URL
+        window.open(directionsUrl);
+      }, (error) => {
+        console.log('Error occurred while retrieving current location:', error);
+      });
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
+  }
+  
+
 }
+
+//Good Code
