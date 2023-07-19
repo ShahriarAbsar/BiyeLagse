@@ -11,11 +11,19 @@ import {  MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { WeddingComponent } from './wedding/wedding.component';
+import { HoludComponent } from './holud/holud.component';
+import { ReceptionComponent } from './reception/reception.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
-    DesignsComponent
+    DesignsComponent,
+    LandingPageComponent,
+    WeddingComponent,
+    HoludComponent,
+    ReceptionComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
     HttpClientModule,
+    MatIconModule,
+    
     
   ],
   providers: [],

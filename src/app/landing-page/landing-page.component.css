@@ -1,0 +1,175 @@
+body{
+  font-family: 'Freehand', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Ysabeau Infant', sans-serif;
+}
+
+
+.button {
+  border-color: transparent;
+  border: transparent;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 44vh;
+  left: 39.25vw;
+  gap: 10px;
+  color: #232323;
+  z-index: 9999;
+  width: 22vw;
+  
+}
+
+.button button {
+  width: 100%;
+  height: 5vh;
+  border-radius: 5px; /* Adjust the border radius as per your requirements */
+}
+
+  .button:hover{
+    color: red;
+  }
+  
+  .landing-page {
+    position: relative;
+    height: 100vh;
+    background-image: url('images/backgroung1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Additional styles for your component */
+  }
+  
+  .full-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100vh;
+    z-index: 9999;
+    background-image: url('images/overlay.png');
+    mix-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: width 0.5s ease; /* Smooth transition for width */
+    /* Additional styles for the overlay image */
+  }
+  
+  .full-screen-overlay::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/overlay.png');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Additional styles for the overlay image after it is clicked */
+  }
+  
+  .full-screen-overlay.full-screen-overlay {
+    width: 100vw; /* Expand the width to full viewport width */
+    mix-blend-mode: multiply;
+  }
+  
+  
+  
+  
+  
+  .landing-page-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 100%;
+    background-image: url('images/overlay.png');
+    mix-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Additional styles for the overlay image */
+  }
+  
+  /* Existing styles for .button and .landing-page-overlay */
+
+.new-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 45vh;
+    left: 48vw;
+    gap: 10px;
+    
+    color: #232323;
+    z-index: 9999;
+  }
+
+  .new-buttons button {
+    width: 150%;
+    height: 5vh;
+    border-radius: 5px; /* Adjust the border radius as per your requirements */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  /* Existing styles for .button, .new-buttons, and .hidden */
+
+  .back-button {
+   background: transparent;
+    border: transparent;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1.5s ease; /* Smooth transition for opacity */
+  }
+
+  .back-button:hover {
+    color: red; /* Set the text color to red on hover */
+  }
+ 
+  
+  .hidden {
+    display: none;
+  }
+  
+  .transition-reverse {
+    opacity: 0;
+  }
+  .logo {
+    position: fixed;
+    left: 44vw;
+    top: 1vh;
+    z-index: 9999;
+    width: 167px;
+    height: 167px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+  }
+
+  .para {
+    
+    text-align: center;
+    position: fixed;
+    top: 65vh;
+    left: 36.2vw;
+    display: block;
+    font-size: 9.95px;
+    color: rgba(248, 248, 248, 0.73);
+    z-index: 999;
+    padding: 10px; /* Add padding to create space within the box */
+    width: 500px; /* Adjust the width as per your requirements */
+    z-index: 99999;
+  }
+  
+  

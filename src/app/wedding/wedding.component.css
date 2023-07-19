@@ -1,0 +1,97 @@
+.holud {
+    background-image: url("../../assets/images/overlay.png");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    background-repeat: no-repeat;
+  }
+  
+   .logo {
+      position: fixed;
+      left: 42vw;
+      top: 1vh;
+      z-index: 9999;
+      width: 167px;
+      height: 167px;
+      flex-shrink: 0;
+      background-repeat: no-repeat;
+    }
+  
+  .slider-container {
+      position: fixed;
+      left: 11.5vw;
+      top: 20vw;
+      width: 80%;
+      height: 45%;
+      border-radius: 10px;
+      align-items: center;
+      overflow: hidden;
+      background-color:white;
+      z-index: 9999;
+    }
+    
+    .slider {
+       
+      position: relative;
+      overflow: hidden; /* Add this line */
+      width: 100%;
+      margin-top: 31px;
+      margin-left: 40px;
+      display: flex;
+      transition: transform 0.5s;
+  
+    }
+    
+    
+    .slide {
+      flex: 0 0 auto;
+      margin: 0 0px;
+    }
+    
+    .slide img {
+      position: relative;
+      bottom: 2vh;
+      gap: 10px;
+      padding: 0;
+      padding-right: 5px;
+      width: auto;
+      height: auto;
+      padding: 10px;
+      max-width: 80vh;
+      max-height: 35vh;
+    }
+    
+    ::ng-deep .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      
+      border-radius: 10px;
+      color: #fbfbfb;
+      border: transparent;
+      background: rgb(237, 6, 6);
+      transform: translateY(-60%);
+    }
+  
+    ::ng-deep .back{
+      position: fixed;
+      top: 8vh;
+      left: 10vw;
+      border-radius: 10px;
+      color: red;
+      background: rgb(243, 239, 239);
+      transform: translateY(-50%);
+      border: transparent;
+    }
+    .slider-button:first-child {
+      left: 10px;
+      margin: 15px;
+    }
+    
+    .slider-button:last-child {
+      right: 0px;
+      
+    }
+    

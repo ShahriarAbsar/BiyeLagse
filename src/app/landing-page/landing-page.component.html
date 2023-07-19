@@ -1,0 +1,52 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freehand&family=Montserrat:wght@100&family=Rubik:wght@300;400&family=Ysabeau+Infant:wght@300&display=swap" rel="stylesheet">
+
+<div class="landing-page">
+  
+  <div class="para">
+
+<p>
+    With Biye Lagse now you can design your own wedding invitation cards and
+    send it to your guests with just a click. Along with it you can send
+    location and navigation. Time of the event can be notified to the guests as
+    well! Designers can collaborate with us by sending their amazing and
+    creative wedding card designs.
+    <br>
+    <br>
+    Biye Lagse is here to connect couples and
+    wedding vendors seamlessly.
+  </p>
+
+
+  </div>
+  
+  
+  <!-- Your component's content here -->
+  <div
+    class="landing-page-overlay"
+    [ngClass]="{ 'full-screen-overlay': isFullScreen }"
+  ></div>
+</div>
+
+<div class="button" [ngClass]="{ hidden: isFullScreen }">
+  <button (click)="toggleFullScreen()">Create Your Dream Wedding Card</button>
+  <button (click)="toggleFullScreen()">
+    Are You A Designer? Collaborate!!
+  </button>
+</div>
+
+<div class="new-buttons" [ngClass]="{ hidden: !isFullScreen }">
+  <button (click)="goToHolud()">Holud</button>
+  <button (click)="goToWedding()">Wedding</button>
+
+  <button (click)="goToReception()">Reception</button>
+</div>
+
+<button
+  class="back-button"
+  (click)="goBack()"
+  [ngClass]="{ hidden: !isFullScreen }"><img src="assets/back.png" alt="back"> </button>
+<div class="logo">
+  <img src="assets/Logo.png" alt="" />
+</div>
