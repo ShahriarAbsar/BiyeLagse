@@ -19,12 +19,15 @@ font-family: 'Ysabeau Infant', sans-serif;
   z-index: 9999;
   width: 22vw;
   
+  
 }
 
 .button button {
   width: 100%;
   height: 5vh;
-  border-radius: 5px; /* Adjust the border radius as per your requirements */
+  border-radius: 5px;
+  cursor: pointer; /* Add cursor pointer for clickable element */
+  pointer-events: auto; /* Enable click events on the element */ /* Adjust the border radius as per your requirements */
 }
 
   .button:hover{
@@ -38,6 +41,7 @@ font-family: 'Ysabeau Infant', sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
     /* Additional styles for your component */
   }
   
@@ -150,11 +154,13 @@ font-family: 'Ysabeau Infant', sans-serif;
     position: fixed;
     left: 44vw;
     top: 1vh;
-    z-index: 9999;
+    z-index: 99999;
     width: 167px;
     height: 167px;
     flex-shrink: 0;
     background-repeat: no-repeat;
+    cursor: pointer; /* Add cursor pointer for clickable element */
+  pointer-events: auto; /* Enable click events on the element */
   }
 
   .para {

@@ -6,6 +6,7 @@ import { HoludComponent } from '../holud/holud.component';
 import { ReceptionComponent } from '../reception/reception.component';
 
 
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: 'landing-page.component.html',
@@ -49,6 +50,9 @@ export class LandingPageComponent {
 
   goToReception() {
     this.router.navigate(['/reception']);
+  }
+  goHome() {
+    this.router.navigateByUrl(''); // Replace '/' with your desired home route
   }
   
 }

@@ -1,5 +1,7 @@
+/* Default styles for large screens (55-inch) */
+
 .holud {
-  background-image: url("./images/overlay.png");
+  background-image: url("../../assets/overlay.png");
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -7,91 +9,220 @@
   background-repeat: no-repeat;
 }
 
- .logo {
-    position: fixed;
-    left: 42vw;
-    top: 1vh;
-    z-index: 9999;
-    width: 167px;
-    height: 167px;
-    flex-shrink: 0;
-    background-repeat: no-repeat;
-  }
+.logo {
+  position: fixed;
+  left: 44vw;
+  top: 1vh;
+  z-index: 9999;
+  width: 167px;
+  height: 167px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  cursor: pointer; /* Add cursor pointer for clickable element */
+  pointer-events: auto; /* Enable click events on the element */
+}
 
 .slider-container {
-    position: fixed;
-    left: 11.5vw;
-    top: 20vw;
-    width: 80%;
-    height: 45%;
-    border-radius: 10px;
-    align-items: center;
+  position: fixed;
+  left: 2.5vw;
+  top: 15vw;
+  width: 95.2%;
+  height: 50%;
+  border-radius: 15px;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  z-index: 9999;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 425vw;
+  height: auto;
+  top: -5vh;
+  left: 2vw;
+  margin-top: 12vh;
+  margin-left: 40px;
+  display: flex;
+  
+  transition: transform 0.5s;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin: 0 0px;
+}
+
+.slide img {
+  position: relative;
+  top: 2vh;
+  gap: 60px;
+  padding: 0;
+  padding-right: 2px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  padding-right: 10px;
+  max-width: 100vw;
+  max-height: 50vh;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+  /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);*/
+}
+
+::ng-deep .slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  color: #fbfbfb;
+  border: transparent;
+  background: rgb(237, 6, 6);
+  transform: translateY(-60%);
+}
+
+::ng-deep .back {
+  position: fixed;
+  top: 8vh;
+  left: 3vw;
+  border-radius: 10px;
+  color: red;
+  background: rgb(243, 239, 239);
+  transform: translateY(-50%);
+  border: transparent;
+}
+
+.slider-button:first-child {
+  left: 10px;
+  margin: 15px;
+}
+
+.slider-button:last-child {
+  right: 0px;
+}
+
+/* Media Queries */
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+  .holud {
+    /* Add your styles for small screens here */
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .logo {
+    /* Example small screen styles for logo */
+    left: 34.5vw;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .slider-container {
+    /* Example small screen styles for slider container */
+    position: relative;
+    left: 2.5vw;
+    top: 36vw;
+    width: 96.2%;
+    height: 50%;
+    border-radius: 15px;
+    align-items: inherit;
+    
     overflow: hidden;
-    background-color:white;
+    background-color: white;
     z-index: 9999;
   }
-  
-  .slider {
-     
-    position: relative;
-    overflow: hidden; /* Add this line */
-    width: 100%;
-    margin-top: 31px;
-    margin-left: 40px;
-    display: flex;
-    transition: transform 0.5s;
 
-  }
-  
-  
-  .slide {
-    flex: 0 0 auto;
-    margin: 0 0px;
-  }
-  
   .slide img {
+    /* Example small screen styles for slide images */
+    max-height: 20vh;
     position: relative;
-    bottom: 2vh;
-    gap: 10px;
-    padding: 0;
-    padding-right: 5px;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    max-width: 80vh;
-    max-height: 35vh;
+    
   }
-  
-  ::ng-deep .slider-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    
-    border-radius: 10px;
-    color: #fbfbfb;
-    border: transparent;
-    background: rgb(237, 6, 6);
-    transform: translateY(-60%);
+}
+
+/* Medium screens */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .holud {
+    /* Add your styles for medium screens here */
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
   }
 
-  ::ng-deep .back{
+  .logo {
+    /* Example medium screen styles for logo */
+    left: 30px;
+    top: 30px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .slider-container {
+    /* Example medium screen styles for slider container */
+    top: 55vw;
+    height: 40%;
+  }
+
+  .slide img {
+    /* Example medium screen styles for slide images */
+    height: 50vh;
+    width: 50vw;
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+  .holud {
+    /* Add your styles for mobile screens here */
+    background-size: cover;
+  }
+
+  .logo {
+    /* Example mobile screen styles for logo */
+    left: 24vw;
+    top: 15px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .slider-container{
+    padding: 0;
+    top: 80vw;
+    height:40%;
+    transform: translateX(2%);
+    transform: translateY(2%);
+}
+
+  .slide img {
+    /* Example mobile screen styles for slide images */
+    max-height: 30vh;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin-top: 0%;
+    z-index: 99999;
+    
+  }
+
+  ::ng-deep .back {
     position: fixed;
-    top: 8vh;
-    left: 10vw;
+    top: 5vh;
+    left: 3vw;
     border-radius: 10px;
     color: red;
     background: rgb(243, 239, 239);
     transform: translateY(-50%);
     border: transparent;
   }
-  .slider-button:first-child {
-    left: 10px;
-    margin: 15px;
-  }
-  
-  .slider-button:last-child {
-    right: 0px;
-    
-  }
-  
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-holud',
   templateUrl: 'holud.component.html',
@@ -14,11 +15,43 @@ export class HoludComponent {
     '../../assets/images/img2.png',
     '../../assets/images/img3.png',
     '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
    
    
   ];
 
-  constructor(private location: Location) {}
+  constructor(private location: Location, private router: Router) {}
 
   slideWidth = 320;
   slideMargin = 10;
@@ -47,5 +80,9 @@ export class HoludComponent {
 
   goBack() {
     this.location.back();
+  }
+
+  goHome() {
+    this.router.navigateByUrl(''); // Replace '/' with your desired home route
   }
 }

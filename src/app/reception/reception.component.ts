@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-reception',
   templateUrl: './reception.component.html',
@@ -13,10 +14,43 @@ export class ReceptionComponent {
     '../../assets/images/img1.png',
     '../../assets/images/img2.png',
     '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
+    '../../assets/images/img1.png',
+    '../../assets/images/img2.png',
+    '../../assets/images/img3.png',
    
   ];
 
-  constructor(private location: Location) {}
+  constructor(private location: Location, private router: Router) {}
 
   slideWidth = 320;
   slideMargin = 10;
@@ -45,5 +79,9 @@ export class ReceptionComponent {
 
   goBack() {
     this.location.back();
+  }
+
+  goHome() {
+    this.router.navigateByUrl(''); // Replace '/' with your desired home route
   }
 }

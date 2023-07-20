@@ -2,6 +2,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Montserrat:wght@100&family=Rubik:wght@300;400&family=Ysabeau+Infant:wght@300&display=swap" rel="stylesheet">
 
+
+
+<div class="logo" (click)="goHome()">
+  <img src="assets/Logo.png" alt="" />
+</div>
 <div class="landing-page">
   
   <div class="para">
@@ -47,6 +52,4 @@
   class="back-button"
   (click)="goBack()"
   [ngClass]="{ hidden: !isFullScreen }"><img src="assets/back.png" alt="back"> </button>
-<div class="logo">
-  <img src="assets/Logo.png" alt="" />
-</div>
+  
